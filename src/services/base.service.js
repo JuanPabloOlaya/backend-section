@@ -41,8 +41,8 @@ class BaseService {
   /**
    * Devuelve todos los registros del repositorio
    */
-  async getAll() {
-    return await this.repository.getAll();
+  async getAll(pageSize, pageNumber) {
+    return await this.repository.getAll(pageSize, pageNumber);
   }
 
   /**
@@ -56,8 +56,8 @@ class BaseService {
   /**
    * Verifica si el id fue enviado y realiza la actualizacion del registro con los datos
    * ingresados
-   * @param {*} id 
-   * @param {*} entity 
+   * @param {*} id
+   * @param {*} entity
    * @throws  - Si el id no envió, entonces lanza una excepción con status 400
    */
   async update(id, entity) {
@@ -74,7 +74,7 @@ class BaseService {
 
   /**
    * Elimina el registro por el id
-   * @param {*} id 
+   * @param {*} id
    * @throws  - Si el id no se envió, entonces lanza una excepcion con status 400
    */
   async delete(id) {
