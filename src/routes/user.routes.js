@@ -8,7 +8,6 @@ const { CACHE_TIME } = require("../helpers");
 
 module.exports = function ({ UserController }) {
   const router = Router();
-
   router.get("/:userId", UserController.get);
   router.get(
     "",
